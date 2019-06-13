@@ -35,6 +35,55 @@ cd myapp
 npm install
 ```
 
+## Routing
+
+https://expressjs.com/en/guide/routing.html
+
+```javascript
+router.get("/test/:p1/:p2", function (req, res, next) {
+  res.json({
+    p1: req.params.p1,
+    p2: req.params.p2
+  });
+});
+```
+
 ## Templates
 
 https://pugjs.org/api/getting-started.html
+
+## Session
+
+https://expressjs.com/en/resources/middleware/session.html
+
+# NeDB
+
+https://github.com/louischatriot/nedb/
+
+```bash
+npm install nedb nedb-promise --save
+```
+
+```javascript
+const Datastore = require('nedb-promise');
+let db = new Datastore("db.json");
+db.insert([
+  {name: "User 1", _id: '1'},
+  {name: "User 2", _id: '2'}
+]);
+
+router.get("/find/:id", async function(req, res, next) {
+  let result = await db.find({_id: req.params.id});
+  res.json(result);
+});
+```
+
+```javascript
+let db = new Datastore("user.db");
+db.loadDatabase().then(() => {
+  db.insert([
+    {name: "User 1", _id: '1'},
+    {name: "User 2", _id: '2'}
+  ]);
+});
+```
