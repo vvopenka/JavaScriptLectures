@@ -87,3 +87,7 @@ db.loadDatabase().then(() => {
   ]);
 });
 ```
+
+# Exercise
+
+[Exercise](./EXERCISE.md)
