@@ -101,3 +101,21 @@ class MyClass extends ParentClass {
 [Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
 # Exercise
+
+ - Checkout this repo and install the backend in /modernJs/backend
+
+```bash
+cd modernJs/backend
+npm install
+npm start
+```
+
+ - Create a module which allows manipulations with the items rest API
+    - /items
+    - GET /item/:id
+    - DELETE /item/:id
+    - POST /item
+
+ - Display the items in a table and create a UI for calling all the operations on the api
+
+ - If you are done add a PATCH handler and create an option to update an item.
